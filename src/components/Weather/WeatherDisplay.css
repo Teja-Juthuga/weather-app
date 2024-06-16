@@ -1,0 +1,219 @@
+:root {
+  --lightest-cream: #FDFFE2;
+  --light-blue: #83B4FF;
+  --medium-blue: #5A72A0;
+  --dark-blue: #21303A;
+  --highlight-color: #ffeb3b;
+  --unique-background: #ffeb3b;
+  --unique-border: 2px solid #5A72A0;
+  --unique-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode {
+  --background-color: var(--dark-blue);
+  --text-color: var(--lightest-cream);
+  --card-background: #2b3a67;
+  --card-shadow: rgba(0, 0, 0, 0.5);
+  --unique-background: #4a5a72;
+  --unique-border: 2px solid #83B4FF;
+  --unique-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.app {
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--light-blue);
+  color: var(--dark-blue);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px var(--card-shadow);
+  width: 100vw;
+  max-width: 1200px;
+  box-sizing: border-box;
+  height: 80px;
+  /* Fixed height */
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--dark-blue);
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked+.slider {
+  background-color: var(--medium-blue);
+}
+
+input:checked+.slider:before {
+  transform: translateX(26px);
+}
+
+main {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input[type="text"] {
+  padding: 0.5rem;
+  border: 1px solid var(--medium-blue);
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: var(--medium-blue);
+  color: var(--lightest-cream);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: var(--dark-blue);
+}
+
+.weather-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
+  margin-top: 2rem;
+}
+
+.weather-display {
+  background-color: var(--card-background);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px var(--card-shadow);
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+  -webkit-box-shadow: 7px 10px 13px -1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 7px 10px 13px -1px rgba(0, 0, 0, 0.75);
+  box-shadow: 7px 10px 13px -1px rgba(0, 0, 0, 0.75);
+}
+
+.weather-display h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.weather-display p {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.weather-icon {
+  font-size: 4rem;
+  margin: 1rem 0;
+}
+
+.highlight {
+  background-color: var(--unique-background);
+  border: var(--unique-border);
+  box-shadow: var(--unique-shadow);
+  transform: scale(1.05);
+  animation: highlightAnimation 0.3s ease-in-out;
+}
+
+@keyframes highlightAnimation {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.05);
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    /* Adjust height for smaller screens */
+  }
+
+  input[type="text"] {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .weather-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* f540bd384e0bd85eb4d7df4803ba6161 */
