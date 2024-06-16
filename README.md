@@ -46,6 +46,15 @@ A weather application that allows users to view current weather information for 
 
 4. Open your browser and navigate to `http://localhost:3000` to view the application.
 
+## Deployment
+
+This project Deployed using Netlify 
+
+```bash
+    https://weather-app-frontend-assignment.netlify.app/
+```
+
+
 ## Usage
 
 - The application will display weather information for the default cities upon loading.
@@ -70,8 +79,4 @@ A weather application that allows users to view current weather information for 
 - Implement error handling for invalid input and display user-friendly messages.
 - Add more weather details such as forecasts, sunrise and sunset times, etc.
 - Improve performance by optimizing API calls and component rendering.
-
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
 
